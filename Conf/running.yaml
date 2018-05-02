@@ -1,0 +1,23 @@
+OSPlatform: Windows
+project: Cyb32
+unicodeKeyBoard: True
+timeOut: 80
+logLevel: info
+emailServer: {sender: liushuangshuang@hongfans.cn, 
+              receivers: [liushuangshuang@hongfans.cn],
+              subject: 'Auto Test Report:',
+              smtpserver: smtp.exmail.qq.com,
+              username: liushuangshuang@hongfans.cn,
+              password: Shuang142693
+              }
+gaming: {queue1: {
+                   queueName: name1,
+                   maxSize: 1000,
+                   minSize: 0,
+                   },
+          queue2: {
+                  queueName: name1,
+                  maxSize: 1000,
+                  minSize: 0,
+                  }
+        }
