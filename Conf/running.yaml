@@ -3,7 +3,8 @@ project: Cyb32
 unicodeKeyBoard: True
 timeOut: 80
 logLevel: info
-emailServer: {sender: example@domain.com, 
+emailServer: {
+              sender: example@domain.com, 
               receivers: [receiver1@domain.com, receive2@domain.com],
               subject: 'Auto Test Report:',
               smtpserver: smptserver@domain.com,
