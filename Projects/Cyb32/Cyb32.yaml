@@ -1,0 +1,21 @@
+projectType: APP
+timeout: 60
+platformName: Android
+platformVersion: Nice-AL 10C00B131
+deviceName: Qualcomm snapdragon
+appPackage: sample_package_name
+appActivity: sample_activity_name
+udid: 'DLLKR16C01001014'
+fullReset: False
+app: C:\SVNAndroidSourceCode\cyb\build\outputs\apk\cyb-debug.apk
+pagesToRun: test_membershipCenter
+codeHub: git
+codeHubAddress:
+users: {
+        automation_test_user1:
+          # non-membership
+          {mobile: 13999999999, pwd: 123456, nickname: Hello},
+          # membership
+        automation_test_user2: 
+          {mobile: 13899999999, pwd: 123456, nickname: BLEACH}
+       }
