@@ -3,6 +3,7 @@ project: Cyb32
 unicodeKeyBoard: True
 timeOut: 80
 logLevel: info
+autoSendReport: False
 emailServer: {
               sender: example@domain.com, 
               receivers: [receiver1@domain.com, receive2@domain.com],
