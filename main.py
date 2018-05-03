@@ -55,3 +55,5 @@ if __name__ == '__main__':
     with open(reportPath, "wb") as f:
         runner = HTMLTestRunner(stream=f,title='Automation Test Report',description='Project: %s' % runningProject)
         runner.run(MyTests.suite())
+    if globalConf["autoSendReport"]:
+        emailSender.sendReport(globalConf, reportPath, runningProject)
