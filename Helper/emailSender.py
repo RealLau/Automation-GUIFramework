@@ -1,6 +1,8 @@
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from datetime import datetime
+
 class emailSender:
     #Send report to receivers
     @classmethod
@@ -15,7 +17,9 @@ class emailSender:
         username = conf["username"]
         password = conf["password"]
         msgRoot = MIMEMultipart('related')    
-        msgRoot['Subject'] = subject + resultFileName.replace(".html", "")
+        msgRoot['Subject'] = subject + str(datetime.now())
+        msgRoot["From"] = sender
+        msgRoot["To"] = ", ".join(receivers)
         f = open(resultFileABSPath, "rb")
         content = f.read()
         f.close()
@@ -31,3 +35,4 @@ class emailSender:
         smtp.sendmail(sender, receivers, msgRoot.as_string())    
         smtp.quit()
         print ("Email report has been sent.")
+
