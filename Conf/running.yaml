@@ -1,0 +1,15 @@
+OSPlatform: Windows
+project: Sample
+unicodeKeyBoard: True
+timeOut: 10
+logLevel: info
+autoSendReport: False
+emailServer: {
+              sender: example@domain.com, 
+              receivers: [receiver1@domain.com, receive2@domain.com],
+              subject: 'Auto Test Report:',
+              smtp_server: smptserver@domain.com,
+              username: example@domain.com,
+              password: password
+              }
+              

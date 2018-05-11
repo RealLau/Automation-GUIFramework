@@ -1,0 +1,23 @@
+projectType: Web
+timeout: 60
+startPage: https://developer.sunseaiot.com/
+Browser: Chrome
+platformName: Android
+platformVersion: Nice-AL 10C00B131
+deviceName: Qualcomm snapdragon
+appPackage: sample_package_name
+appActivity: sample_activity_name
+udid: 'DLLKR16C01001014'
+fullReset: False
+app: C:\SVNAndroidSourceCode\cyb\build\outputs\apk\cyb-debug.apk
+pagesToRun: Test_PageBase
+codeHub: git
+codeHubAddress:
+users: {
+        automation_test_user1:
+          # non-membership
+          {email: liushuangshuang@sunseagroup.com, pwd: 12369874, nickname: '双双 刘'},
+          # membership
+        automation_test_user2: 
+          {email: lipan@sunseagroup.com, pwd: 123456, nickname: BLEACH}
+       }
