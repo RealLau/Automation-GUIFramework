@@ -75,12 +75,13 @@ class AutoDriver(Singleton):
     elif projectType == "Web":
         browser = dataProject["Browser"]
         startPage = dataProject["startPage"]
-        driver = eval("sdriver.%s()" % browser)
-        driver.get("%s" % startPage)
+        if not driver:
+            driver = eval("sdriver.%s()" % browser)
+            driver.get("%s" % startPage)
     else:
         print("projectType must be APP or Web ")
         raise BaseException("projectType must be APP or Web")
-    
+
     @classmethod
     def instant_find_element(self, locator):
         # 单次查找一个元素
@@ -251,10 +252,19 @@ class AutoDriver(Singleton):
         self.driver.launch_app()
 
     @classmethod
-    def close(self):
-        # web可用，关闭driver
+    def restart(self):
         self.driver.quit()
-    
+        self.driver = sdriver.Chrome()
+        self.driver.get(self.dataProject["startPage"])
+
+    @classmethod
+    def restart_browser(self, func):
+        # web可用，重启浏览器
+        def wraper(*arg, **kwargs):
+            self.restart()
+            return func(*arg, **kwargs)
+        return wraper
+
     @classmethod
     def access_new_tab_by_click_link(self, locator):
         # 仅Web测试可用: 通过点击链接进入新页签
