@@ -2,18 +2,20 @@
 from Projects.Sample.Pages.PageNewDevice import PageNewDevice
 from Projects.Sample.Pages.PageBase import PageBase
 import unittest
+from BaseDriver.Driver import AutoDriver
 
 
 class Test_PageNewDevice(unittest.TestCase):
     PageNewDevice = PageNewDevice()
     PageBase = PageBase()
-    
+
     def setUp(self):
-        self.PageBase.login("liushuangshuang@sunseagroup.com", "12369874")
+        self.PageBase.login("ltest", "123456")
         self.PageBase.access_Page("注册新设备")
-    
+
+    @AutoDriver.restart_browser
     def tearDown(self):
-        self.PageBase.logout()
+        pass
 
     def test_verify_title(self):
         expected_title = "设备注册"
